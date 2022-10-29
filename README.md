@@ -11,7 +11,8 @@
 -e MYSQL_PASSWORD=... 
 ```
 #### Containers create inside webapp pod db mariadb pod 
-``` podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATABASE="wp-db" -e MYSQL_USER="wp-user" -e MYSQL_PASSWORD="wordpress" -v /root/WorkSpace/DO180Exam/Mount_Data:/var/lib/mysql -p 8080:80 --name=mydb mariadb ```
+``` podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATABASE="wp-db" -e MYSQL_USER="wp-user" -e MYSQL_PASSWORD="wordpress" -v            /root/WorkSpace/DO180Exam/Mount_Data:/var/lib/mysql -p 8080:80 --name=mydb mariadb ```
+
 #### Wordpress Environment Variable 
 ```
 -e WORDPRESS_DB_HOST=...
