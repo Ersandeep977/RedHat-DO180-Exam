@@ -3,7 +3,7 @@
 ### mount path
 ``` /root/WorkSpace/DO180Exam/Mount_Data ```
 
-### Containers create inside webapp pod db mariadb pod 
+### Mariadb Environment Variable
 ``` 
 -e MYSQL_ROOT_PASSWORD=... 
 -e MYSQL_DATABASE=...
@@ -13,7 +13,7 @@
 ### Containers create inside webapp pod db mariadb pod 
 ``` podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATABASE="wp-db" -e MYSQL_USER="wp-user" -e MYSQL_PASSWORD="wordpress" -v /root/WorkSpace/DO180Exam/Mount_Data:/var/lib/mysql -p 8080:80 --name=mydb mariadb ```
 
-### Wordpress Envment Variable 
+### Wordpress Environment Variable 
 ```
 -e WORDPRESS_DB_HOST=...
 -e WORDPRESS_DB_USER=...
