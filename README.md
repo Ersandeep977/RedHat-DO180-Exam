@@ -23,3 +23,14 @@
 #### Container create the wordpress
 ``` podman run -d --pod="webapp" -e WORDPRESS_DB_HOST="18.223.3.38" -e WORDPRESS_DB_USER="wp-user" -e WORDPRESS_DB_PASSWORD="wordp3" -e WORDPRESS_DB_NAME="wp-db" --name=wptest-web wordpress ```
 
+### Create Wordpress Continer with mysql database
+```
+podman pod create -n wordpresspod -p 80:80
+
+podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 --pod wordpresspod mysql
+
+podman pod list
+podman ps
+
+podman run -d --name my-wordpress --pod=wordpresspod -e WORDPRESS_DB_HOST=127.0.0.1 -e WORDPRESS_DB_USER=user1 -e WORDPRESS_DB_PASSWORD=mypa55 -e WORDPRESS_DB_NAME=items wordpress
+```
