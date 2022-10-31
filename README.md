@@ -1,4 +1,5 @@
-# Podman Containers
+# Containerization
+### This Document Created by 'Sandeep Kumar Patel' for understanding Containers 
 ![](https://developers.redhat.com/sites/default/files/styles/article_feature/public/blog/2018/08/podman-logo-source-1.png?itok=FNzmSODk)
 ## Official website
 ### Podman 
@@ -24,8 +25,13 @@ sudo apt-get -y update
 sudo apt-get -y install podman
 podman info
 ```
+## Podman: Managing pods and containers in a local container runtime
+![](https://developers.redhat.com/blog/wp-content/uploads/2019/01/podman-pod-architecture.png)
 ## docker container lifecycle management
 ![](https://blog.kakaocdn.net/dn/cCeXhL/btq8b2w2tyH/nE2s8ocHe7n6YArIJOFm60/img.png)
+
+## Podman: Managing pods and containers in a local container runtime
+![](https://darumatic.com/media/blog_pics/2020_01/Docker_vs_Podman.png)
 
 ## Container
 #### Mariadb Environment Variable
