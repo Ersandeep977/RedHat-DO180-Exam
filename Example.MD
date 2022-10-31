@@ -23,11 +23,13 @@ Copying config 7d424d763e done
 Writing manifest to image destination
 Storing signatures
 b1488ee5a812998003ef742945dd09e64de50b0ffff682b3e6be1825ac09cd5d
-[root@ip-172-31-47-238 WorkSpace]#
+
 [root@ip-172-31-47-238 WorkSpace]# podman ps
 CONTAINER ID  IMAGE                             COMMAND     CREATED        STATUS            PORTS                 NAMES
 b1488ee5a812  docker.io/library/mariadb:latest  mariadbd    9 seconds ago  Up 9 seconds ago  0.0.0.0:8080->80/tcp  mydb
+
 [root@ip-172-31-47-238 WorkSpace]# podman exec -it mydb /bin/bash
+
 root@b1488ee5a812:/# whoami
 
 root@b1488ee5a812:/# mysql -u root -p
@@ -40,8 +42,7 @@ Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-MariaDB [(none)]> show databases
-    -> ;
+MariaDB [(none)]> show databases;
 +--------------------+
 | Database           |
 +--------------------+
@@ -55,6 +56,7 @@ MariaDB [(none)]> show databases
 
 MariaDB [(none)]> use wp-db;
 Database changed
+
 MariaDB [wp-db]> CREATE TABLE Pro(id int(10) NOT NULL,name varchar(100) DEFAULT NULL,code varchar(100) DEFAULT NULL,PRIMARY KEY (id));
 Query OK, 0 rows affected (0.010 sec)
 
@@ -66,10 +68,6 @@ MariaDB [wp-db]> show tables;
 +-----------------+
 1 row in set (0.000 sec)
 
-MariaDB [wp-db]> insert into pro (id,name,code) values(1,'DevOps','DO180');
-ERROR 1146 (42S02): Table 'wp-db.pro' doesn't exist
-MariaDB [wp-db]> insert into pro (id,name,code) values (1,'DevOps','DO180');
-ERROR 1146 (42S02): Table 'wp-db.pro' doesn't exist
 MariaDB [wp-db]> insert into Pro (id,name,code) values (1,'DevOps','DO180');
 Query OK, 1 row affected (0.003 sec)
 
