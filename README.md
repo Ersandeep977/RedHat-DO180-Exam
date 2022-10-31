@@ -1,6 +1,6 @@
 # Podman Containers
 ![](https://developers.redhat.com/sites/default/files/styles/article_feature/public/blog/2018/08/podman-logo-source-1.png?itok=FNzmSODk)
-## official website
+## Official website
 ### Podman 
 https://podman.io/getting-started/installation
 ### Docker Hub
@@ -22,9 +22,7 @@ sudo apt-get -y update
 sudo apt-get -y install podman
 podman info
 ```
-#### mount path
-``` /root/WorkSpace/DO180Exam/Mount_Data ```
-
+## Container
 #### Mariadb Environment Variable
 ``` 
 -e MYSQL_ROOT_PASSWORD=... 
