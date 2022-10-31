@@ -5,12 +5,14 @@ Podman is included in the container-tools module, along with Buildah and Skopeo.
 ```
 sudo yum module enable -y container-tools:rhel8
 sudo yum module install -y container-tools:rhel8
+podman info
 ```
 ## Ubuntu
 The podman package is available in the official repositories for Ubuntu 20.10 and newer.
 ```
 sudo apt-get -y update
 sudo apt-get -y install podman
+podman info
 ```
 #### mount path
 ``` /root/WorkSpace/DO180Exam/Mount_Data ```
