@@ -65,6 +65,17 @@ chown -Rv 27:27 /var/local/mysql
 ```
 podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
 ```
+## Container networking
+![](https://net.cloudinfrastructureservices.co.uk/wp-content/uploads/2021/08/docker-architecture.png)
+### Published ports
+By default, when you create or run a container using docker create or docker run, it does not publish any of its ports to the outside world. To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag. This creates a firewall rule which maps a container port to a port on the Docker host to the outside world. Here are some examples.
+```
+Flag   value	                        Description
+-p     8080:80	                      Map TCP port 80 in the container to port 8080 on the Docker host.
+-p     192.168.1.100:8080:80	        Map TCP port 80 in the container to port 8080 on the Docker host for connections to host IP 192.168.1.100.
+-p     8080:80/udp	                  Map UDP port 80 in the container to port 8080 on the Docker host.
+-p     8080:80/tcp -p 8080:80/udp	   Map TCP port 80 in the container to TCP port 8080 on the Docker host, and map UDP port 80 in the container to UDP port 8080 on the Docker host.
+```
 #### Wordpress Environment Variable 
 ```
 -e WORDPRESS_DB_HOST=...
