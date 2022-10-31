@@ -95,4 +95,6 @@ MariaDB [wp-db]> select *from Pro;
 ```
 podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
 ```
+selinux enabled
+
 
