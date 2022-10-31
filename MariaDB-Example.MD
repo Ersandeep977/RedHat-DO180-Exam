@@ -91,3 +91,8 @@ MariaDB [wp-db]> select *from Pro;
 +----+--------+-------+
 2 rows in set (0.000 sec)
 ```
+## docker persistent volume attach
+```
+podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
+```
+
