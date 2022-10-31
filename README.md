@@ -53,6 +53,14 @@ podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATA
 ## docker persistent volume attach
 ![](https://miro.medium.com/max/624/1*j0g82wL5oUl3dgwIXZBIpA.png)
 ### Mount The Volume /var/lib/mysql
+## selinux enabled
+```
+mkdir -pv /var/local/mysql
+semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
+restorecon -R /var/local/mysql
+ls -dZ /var/local/mysql
+chown -Rv 27:27 /var/local/mysql
+```
 #### -v /opt/wordpr:/var/lib/mysql
 ```
 podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
