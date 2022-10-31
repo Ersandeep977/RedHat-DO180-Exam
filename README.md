@@ -27,7 +27,7 @@ podman info
 ```
 ## Podman: Managing pods and containers in a local container runtime
 ![](https://developers.redhat.com/blog/wp-content/uploads/2019/01/podman-pod-architecture.png)
-## docker container lifecycle management
+## Docker container lifecycle management
 ![](https://blog.kakaocdn.net/dn/cCeXhL/btq8b2w2tyH/nE2s8ocHe7n6YArIJOFm60/img.png)
 
 ## Podman: Managing pods and containers in a local container runtime
@@ -53,7 +53,7 @@ podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATA
 ## docker persistent volume attach
 ![](https://miro.medium.com/max/624/1*j0g82wL5oUl3dgwIXZBIpA.png)
 ### Mount The Volume /var/lib/mysql
-## selinux enabled
+## Selinux enabled
 ```
 mkdir -pv /var/local/mysql
 semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
