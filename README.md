@@ -50,7 +50,13 @@ podman info
 ``` 
 podman run -d --pod new:webapp -e MYSQL_ROOT_PASSWORD="myrootpass" -e MYSQL_DATABASE="wp-db" -e MYSQL_USER="wp-user" -e MYSQL_PASSWORD="wordpress" -p 8080:80 --name=mydb mariadb
 ```
-
+## docker persistent volume attach
+![](https://miro.medium.com/max/624/1*j0g82wL5oUl3dgwIXZBIpA.png)
+### Mount The Volume /var/lib/mysql
+#### -v /opt/wordpr:/var/lib/mysql
+```
+podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
+```
 #### Wordpress Environment Variable 
 ```
 -e WORDPRESS_DB_HOST=...
