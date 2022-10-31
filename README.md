@@ -25,7 +25,7 @@ sudo apt-get -y install podman
 podman info
 ```
 ## docker container lifecycle management
-!(https://blog.kakaocdn.net/dn/cCeXhL/btq8b2w2tyH/nE2s8ocHe7n6YArIJOFm60/img.png)
+![](https://blog.kakaocdn.net/dn/cCeXhL/btq8b2w2tyH/nE2s8ocHe7n6YArIJOFm60/img.png)
 
 ## Container
 #### Mariadb Environment Variable
