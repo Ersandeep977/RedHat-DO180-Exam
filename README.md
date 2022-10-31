@@ -8,14 +8,14 @@ https://hub.docker.com
 ### Redhat container registry
 https://catalog.redhat.com/software/containers/search?p=1
 
-## RHEL8
+### RHEL8
 Podman is included in the container-tools module, along with Buildah and Skopeo.
 ```
 sudo yum module enable -y container-tools:rhel8
 sudo yum module install -y container-tools:rhel8
 podman info
 ```
-## Ubuntu
+### Ubuntu
 The podman package is available in the official repositories for Ubuntu 20.10 and newer.
 ```
 sudo apt-get -y update
