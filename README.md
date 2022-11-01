@@ -101,3 +101,9 @@ podman ps
 
 podman run -d --name my-wordpress --pod=wordpresspod -e WORDPRESS_DB_HOST=127.0.0.1 -e WORDPRESS_DB_USER=user1 -e WORDPRESS_DB_PASSWORD=mypa55 -e WORDPRESS_DB_NAME=items wordpress
 ```
+## OpenShift
+```
+oc new-app --template="openshift/postgresql-ephemeral" -p POSTGRESQL_USER="vimal" -p POSTGRESQL_PASSWORD="redhat" -p POSTGRESQL_DATABASE="lwdb" -p DATABASE_SERVICE_NAME="mydb" -l "app=mydb" -l "mydc=india"
+
+ .\oc.exe  get pods -o wide | grep Running | grep mydb |awk '{print $6}
+```
