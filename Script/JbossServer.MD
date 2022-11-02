@@ -71,7 +71,7 @@ podman stop webcon1
 ```
 ls
 chmod +x Stop.sh
-./ Delete.sh
+./Stop.sh
 ```
 ### Delete.sh
 ```
