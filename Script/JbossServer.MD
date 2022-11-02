@@ -36,7 +36,15 @@ RUN /opt/jboss/wildfly-27.0.0.Beta1/bin/add-user.sh admin Admin#70365 --silent
 
 CMD ["/opt/jboss/wildfly-27.0.0.Beta1/bin/standalone.sh","-b","0.0.0.0","-bmanagement","0.0.0.0"]
 ```
-
+## Run Command
+```
+podman images
+podman build -t z1:v1 .
+podman run -it -p 8080:8080 -p 9990:9990 z1:v1
+podman ps
+podman logs wbjbos1
+podman logs --tail 10 wbjbos1
+```
 ## Testing 
 ```
 <local ip>:8080 ---> show Wildfly show the web page
