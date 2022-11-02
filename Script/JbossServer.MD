@@ -4,6 +4,10 @@
 ```
 docker pull jboss/base-jdk
 ```
+### Downlod the soft where 
+```
+wget https://github.com/wildfly/wildfly/releases/download/27.0.0.Beta1/wildfly-27.0.0.Beta1.tar.gz
+```
 
 ## DockerFile
 ```
@@ -26,4 +30,10 @@ EXPOSE 9999
 RUN /opt/jboss/wildfly-27.0.0.Beta1/bin/add-user.sh admin Admin#70365 --silent
 
 CMD ["/opt/jboss/wildfly-27.0.0.Beta1/bin/standalone.sh","-b","0.0.0.0","-bmanagement","0.0.0.0"]
+```
+
+## Testing 
+```
+<local ip>:8080 ---> show Wildfly show the web page
+<local ip>:9990 ----> User Name = admin , PW = docker pull jboss/base-jdk
 ```
