@@ -61,19 +61,28 @@ podman run -dit --name webcon1 -p 12080:8080 -p 12990:9990 -p 12999:9999  jbossa
 ls
 chmod +x Running.sh
 ./Running.sh
-```
-# this script for stop container 
+``` 
+### Stop.sh
 ```
 #! /bin/bash
 # this script stop the runnig webcon1 container
 podman stop webcon1 
 ```
-
+```
+ls
+chmod +x Stop.sh
+./ Delete.sh
+```
 ### Delete.sh
 ```
 #! /bin/bash
 # this script for delete container 
 podman rm -f webcon1 
+```
+```
+ls
+chmod +x  Delete.sh
+./ Delete.sh
 ```
 ### ShowLog.sh
 ```
@@ -86,7 +95,3 @@ ls
 chmod +x ShowLog.sh
 ./ShowLog.sh
 ```
-
-
-
-
