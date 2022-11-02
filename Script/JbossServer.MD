@@ -39,8 +39,8 @@ CMD ["/opt/jboss/wildfly-27.0.0.Beta1/bin/standalone.sh","-b","0.0.0.0","-bmanag
 ## Run Command
 ```
 podman images
-podman build -t z1:v1 .
-podman run -it -p 8080:8080 -p 9990:9990 z1:v1
+podman build -t jbossapp:v1 .
+podman run -it --name wbjbos1 -p 8080:8080 -p 9990:9990 jbossapp:v1
 podman ps
 podman logs wbjbos1
 podman logs --tail 10 wbjbos1
@@ -50,3 +50,43 @@ podman logs --tail 10 wbjbos1
 <local ip>:8080 ---> show Wildfly show the web page
 <local ip>:9990 ----> User Name = admin , PW = docker pull jboss/base-jdk
 ```
+## Some Script 
+### Running.sh
+```
+#! /bin/bash
+# this script for running container in background
+podman run -dit --name webcon1 -p 12080:8080 -p 12990:9990 -p 12999:9999  jbossapp:v1
+```
+```
+ls
+chmod +x Running.sh
+./Running.sh
+```
+# this script for stop container 
+```
+#! /bin/bash
+# this script stop the runnig webcon1 container
+podman stop webcon1 
+```
+
+### Delete.sh
+```
+#! /bin/bash
+# this script for delete container 
+podman rm -f webcon1 
+```
+### ShowLog.sh
+```
+#! /bin/bash
+# this script for Show log only 10 line  
+podman logs --tail 10 webcon1 
+```
+```
+ls
+chmod +x ShowLog.sh
+./ShowLog.sh
+```
+
+
+
+
