@@ -15,7 +15,7 @@ echo ""
 # Create Podman Container MySQL
 echo "Create Podman Container MySQL..."
 sleep 2
-podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /opt/wordpr:/var/lib/mysql --pod wordprs mysql
+podman run -d --name persist-db -e MYSQL_ROOT_PASSWORD=r00tpa55 -e MYSQL_DATABASE=items -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -v /tmp/db:/var/lib/mysql --pod wordprs mysql
 echo ""
 echo "MYSQL Container......'OK'"
 
