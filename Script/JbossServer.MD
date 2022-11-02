@@ -3,7 +3,7 @@
 ### Information
 https://www.dnsstuff.com/what-is-jboss-application-server
 ### quay container registry
-https://www.endpointdev.com/blog/2017/07/jboss-456-to-wildfly-migration-tips/image-0.jpeg
+https://quay.io/repository/wildfly/wildfly
 ### Pull jboss server inside JDK  
 ```
 docker pull jboss/base-jdk
