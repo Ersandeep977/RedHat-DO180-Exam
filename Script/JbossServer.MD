@@ -13,6 +13,11 @@ wget https://github.com/wildfly/wildfly/releases/download/27.0.0.Beta1/wildfly-2
 ```
 FROM jboss/base-jdk:11
 
+MAINTAINER Sandeep Kumar Patel
+
+LABEL "team"="devOps"
+
+# this packegs is download "wget https://github.com/wildfly/wildfly/releases/download/27.0.0.Beta1/wildfly-27.0.0.Beta1.tar.gz" and in local 
 COPY wildfly-27.0.0.Beta1.tar.gz .
 
 RUN tar -xzvf wildfly-27.0.0.Beta1.tar.gz
