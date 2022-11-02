@@ -7,7 +7,7 @@ sleep 2
 
 # Create podman pod Name is wordprs
 echo "Create podman pod Name is wordprs..."
-podman pod create -n wordprs -p 80:80
+podman pod create -n wordprs -p 8080:80
 echo ""
 echo "Pod Creation .... 'OK'"
 echo ""
