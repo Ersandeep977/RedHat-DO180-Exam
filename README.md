@@ -110,4 +110,16 @@ oc new-app --template="openshift/postgresql-ephemeral" -p POSTGRESQL_USER="vimal
 ```
 \oc.exe  get pods -o wide | grep Running | grep mydb |awk '{print $6}
 ```
+### Some other command
+```
+oc get pod | grep Running | grep nodejs |awk '{print $1}'
 
+oc logs $(oc get pod | grep Running | grep nodejs |awk '{print $1}')
+oc -n lwnewproject logs –tail=10
+
+oc rsync info.sh $(oc get pod | grep Running | grep nodejs |awk '{print $1}'):data
+oc -n lwnewproject rsync info.sh $i:/data;
+
+oc exec -it $(oc get pod | grep Running | grep nodejs |awk '{print $1}') ./data/info.sh
+oc -n lwnewproject exec -it $i - ./data/info.sh; 
+```
