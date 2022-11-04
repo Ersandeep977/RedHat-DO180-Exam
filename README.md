@@ -112,6 +112,7 @@ oc new-app --template="openshift/postgresql-ephemeral" -p POSTGRESQL_USER="vimal
 ```
 ### Some other command
 ```
+oc -n lwnewproject get po -l db=database -oname
 oc get pod | grep Running | grep nodejs |awk '{print $1}'
 
 oc logs $(oc get pod | grep Running | grep nodejs |awk '{print $1}')
