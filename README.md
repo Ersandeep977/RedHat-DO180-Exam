@@ -20,6 +20,10 @@ sudo yum module enable -y container-tools:rhel8
 sudo yum module install -y container-tools:rhel8
 podman info
 ```
+## delete all
+```
+podman system prune -af
+```
 ### Ubuntu
 The podman package is available in the official repositories for Ubuntu 20.10 and newer.
 ```
